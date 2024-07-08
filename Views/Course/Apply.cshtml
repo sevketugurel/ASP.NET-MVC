@@ -1,0 +1,53 @@
+<div class="display-6">Apply</div>
+
+<form method="POST" action="/course/apply">
+  <div class="form-group my-2">
+    <label for="email">Email</label>
+    <input id="email" name="Email" class="form-control" type="email" required />
+  </div>
+
+  <div class="form-group my-2">
+    <label for="firstName">First Name</label>
+    <input id="firstName" name="FirstName" class="form-control" required />
+  </div>
+
+  <div class="form-group my-2">
+    <label for="lastName">Last Name</label>
+    <input id="lastName" name="LastName" class="form-control" required />
+  </div>
+
+  <div class="form-group my-2">
+    <label for="age">Age</label>
+    <select id="age" name="Age" class="form-control" required>
+      <option value="18">18</option>
+      <option value="19">19</option>
+      <option value="20">20</option>
+      <option value="21">21</option>
+      <option value="22">22</option>
+      <option value="23">23</option>
+    </select>
+  </div>
+
+  <fieldset class="form-group my-2">
+    <legend>Select One Course</legend>
+    <div class="form-check">
+      <input id="mvc" type="radio" name="SelectedCourse" value="ASP.NET Core MVC" class="form-check-input" required /> 
+      <label for="mvc" class="form-check-label">ASP.Net Core MVC</label>
+    </div>
+    <div class="form-check">
+      <input id="api" type="radio" name="SelectedCourse" value="ASP.NET Core API" class="form-check-input" required /> 
+      <label for="api" class="form-check-label">ASP.Net Core API</label>
+    </div>
+    <div class="form-check">
+      <input id="blazor" type="radio" name="SelectedCourse" value="Blazor" class="form-check-input" required /> 
+      <label for="blazor" class="form-check-label">Blazor</label>
+    </div>
+  </fieldset>
+
+  
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary my-2">Apply</button>
+    <a href="/" class="btn btn-warning my-2">Home</a>
+  </div>
+</form>
