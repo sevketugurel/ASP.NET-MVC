@@ -1,6 +1,8 @@
+@model Candidate
+
 <div class="display-6">Apply</div>
 
-<form method="POST" action="/course/apply">
+<form method="POST" asp-action="Apply">
   <div class="form-group my-2">
     <label for="email">Email</label>
     <input id="email" name="Email" class="form-control" type="email" required />
@@ -48,6 +50,6 @@
 
   <div class="form-group">
     <button type="submit" class="btn btn-primary my-2">Apply</button>
-    <a href="/" class="btn btn-warning my-2">Home</a>
+    <a asp-controlle="Home" asp-action="Index" class="btn btn-warning my-2">Home</a>
   </div>
 </form>

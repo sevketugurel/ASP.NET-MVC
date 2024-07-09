@@ -9,15 +9,19 @@ namespace BtkAkademi.Controllers
     {
       return View();
     }
-    
+
     public IActionResult Apply()
     {
       return View();
     }
-    [HttpPost][ValidateAntiForgeryToken] //güvenliği sağlamak için
-    public IActionResult Apply([FromForm]Candidate  model) //yine güvenlik için nereden geldiğini söylememiz iyi olur
+
+    [HttpPost]
+    [ValidateAntiForgeryToken] //güvenliği sağlamak için
+
+    public IActionResult Apply([FromForm] Candidate model) //yine güvenlik için nereden geldiğini söylememiz iyi olur
     {
-      return View();
+      Repository.Add(model); //modeli repository'e ekliyoruz
+      return View("Feedback", model); //feedback sayfasına yönlendiriyoruz
     }
   }
 }

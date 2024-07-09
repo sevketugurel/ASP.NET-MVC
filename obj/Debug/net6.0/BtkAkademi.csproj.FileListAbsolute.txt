@@ -28,3 +28,4 @@
 /Users/sevketugurel/Desktop/BtkAkademi/obj/Debug/net6.0/BtkAkademi.pdb
 /Users/sevketugurel/Desktop/BtkAkademi/obj/Debug/net6.0/BtkAkademi.genruntimeconfig.cache
 /Users/sevketugurel/Desktop/BtkAkademi/obj/Debug/net6.0/ref/BtkAkademi.dll
+/Users/sevketugurel/Desktop/BtkAkademi/obj/Debug/net6.0/BtkAkademi.sourcelink.json
