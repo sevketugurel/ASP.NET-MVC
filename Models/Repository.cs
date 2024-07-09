@@ -1,3 +1,4 @@
+
 namespace BtkAkademi.Models
 {
   public static class Repository
@@ -9,8 +10,5 @@ namespace BtkAkademi.Models
     {
       applications.Add(candidate);
     }
-
-
-
   }
 }

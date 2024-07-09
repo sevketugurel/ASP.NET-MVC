@@ -10,18 +10,27 @@ namespace BtkAkademi.Controllers
       return View();
     }
 
+    [HttpGet]
     public IActionResult Apply()
     {
       return View();
     }
 
     [HttpPost]
-    [ValidateAntiForgeryToken] //güvenliği sağlamak için
+    [ValidateAntiForgeryToken] // To ensure security
 
-    public IActionResult Apply([FromForm] Candidate model) //yine güvenlik için nereden geldiğini söylememiz iyi olur
+    public IActionResult Apply([FromForm] Candidate model) 
     {
-      Repository.Add(model); //modeli repository'e ekliyoruz
-      return View("Feedback", model); //feedback sayfasına yönlendiriyoruz
+      if (Repository.Applications.Any(c => c.Email.Equals(model.Email)))
+      {
+      ModelState.AddModelError("Email", "Bu email adresi ile daha önce başvuru yapılmıştır.");
+      }
+      if (ModelState.IsValid)
+      {
+      Repository.Add(model);
+      return View("Feedback", model);
+      }
+      return View();
     }
   }
 }

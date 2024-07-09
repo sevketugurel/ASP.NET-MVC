@@ -3,6 +3,7 @@
 <div class="display-6">Apply</div>
 
 <form method="POST" asp-action="Apply">
+  <div class="text-danger" asp-validation-summary="All"></div>
   <div class="form-group my-2">
     <label for="email">Email</label>
     <input id="email" name="Email" class="form-control" type="email" required />
@@ -37,8 +38,8 @@
       <label for="mvc" class="form-check-label">ASP.Net Core MVC</label>
     </div>
     <div class="form-check">
-      <input id="api" type="radio" name="SelectedCourse" value="ASP.NET Core API" class="form-check-input" required /> 
-      <label for="api" class="form-check-label">ASP.Net Core API</label>
+      <input id="api" type="radio" name="SelectedCourse" value="ASP.NET Core API" checked class="form-check-input" required /> 
+      <label for="api" class="form-check-label" cjec>ASP.Net Core API</label>
     </div>
     <div class="form-check">
       <input id="blazor" type="radio" name="SelectedCourse" value="Blazor" class="form-check-input" required /> 
