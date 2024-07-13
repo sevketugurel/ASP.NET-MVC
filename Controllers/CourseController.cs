@@ -7,7 +7,9 @@ namespace BtkAkademi.Controllers
   {
     public IActionResult Index()
     {
-      return View();
+      // Veritabanından başvuruları çekip View'e model olarak gönder
+      var applications = Repository.Applications.ToList();
+      return View(applications);
     }
 
     [HttpGet]
@@ -18,18 +20,19 @@ namespace BtkAkademi.Controllers
 
     [HttpPost]
     [ValidateAntiForgeryToken] // To ensure security
-
-    public IActionResult Apply([FromForm] Candidate model) 
+    public IActionResult Apply([FromForm] Candidate model)
     {
       if (Repository.Applications.Any(c => c.Email.Equals(model.Email)))
       {
-      ModelState.AddModelError("Email", "Bu email adresi ile daha önce başvuru yapılmıştır.");
+        ModelState.AddModelError("Email", "Bu email adresi ile daha önce başvuru yapılmıştır.");
       }
+
       if (ModelState.IsValid)
       {
-      Repository.Add(model);
-      return View("Feedback", model);
+        Repository.Add(model);
+        return View("Feedback", model);
       }
+
       return View();
     }
   }
